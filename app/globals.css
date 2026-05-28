@@ -3,25 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0f1117;
+  --bg-surface: #161b22;
+  --bg-surface-2: #1c2230;
+  --border: #30363d;
+  --border-subtle: #21262d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --text-subtle: #6e7681;
+
+  --accent-client: #3b82f6;
+  --accent-client-dim: rgba(59, 130, 246, 0.15);
+  --accent-client-border: rgba(59, 130, 246, 0.35);
+
+  --accent-dt: #22c55e;
+  --accent-dt-dim: rgba(34, 197, 94, 0.15);
+  --accent-dt-border: rgba(34, 197, 94, 0.35);
+
+  --row-add: rgba(34, 197, 94, 0.12);
+  --row-remove: rgba(239, 68, 68, 0.12);
+  --row-changed: rgba(245, 158, 11, 0.12);
+  --row-match: transparent;
+
+  --badge-add: #22c55e;
+  --badge-remove: #ef4444;
+  --badge-changed: #f59e0b;
+  --badge-match: #6e7681;
+
+  --sev-high: #ef4444;
+  --sev-high-dim: rgba(239, 68, 68, 0.15);
+  --sev-medium: #f59e0b;
+  --sev-medium-dim: rgba(245, 158, 11, 0.15);
+  --sev-low: #22c55e;
+  --sev-low-dim: rgba(34, 197, 94, 0.15);
+
+  --font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
